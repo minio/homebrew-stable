@@ -6,14 +6,9 @@ class MinioMc < Formula
     :revision => "3fe080982e5e7da59dfcca9ad63ccdd64f04e053"
   version "20170206201619"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "1505131f2ca44de8d0c28c919b70efa1f5acc5172de0fd84c33b703f063b05a9" => :sierra
-    sha256 "c2d952413c2d49b847d338372f8db95cf04ad01c1a2cc46d69603140631b9e77" => :el_capitan
-    sha256 "1eced2673f13064ae7898dfdd0959a3e689e48f638f447a5da3b6fc3dc90a27b" => :yosemite
-  end
+  bottle :unneeded
 
-  depends_on "go" => :build
+  depends_on "go@1.7" => :build
 
   conflicts_with "midnight-commander", :because => "Both install a `mc` binary"
 

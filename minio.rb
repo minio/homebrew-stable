@@ -7,12 +7,7 @@ class Minio < Formula
   version "20170316215032"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "9f530ee8a2a6cad5655dfc6032f390c9349399bbf72939d520c45b9d4887fb55" => :sierra
-    sha256 "f90a700e0b22c469ac2f9462c6739e2107d0c3c52bc52eb467c45e77168e53e2" => :el_capitan
-    sha256 "157af8ad8cde930743a2033c723ba1ecf05079d9eca39bddafdf735321aee6e5" => :yosemite
-  end
+  bottle :unneeded
 
   ## Minio depends on go1.7.x only because of the apparent incompatibilities with go1.8
   ## for now, until the upstream https://github.com/minio/minio/tree/go1.8 is merged
