@@ -1,10 +1,10 @@
-class MinioMc < Formula
+class Mc < Formula
   desc "ls, cp, mkdir, diff and rsync for filesystems and object storage"
   homepage "https://github.com/minio/mc"
   url "https://github.com/minio/mc.git",
-    :tag => "RELEASE.2017-02-06T20-16-19Z",
-    :revision => "3fe080982e5e7da59dfcca9ad63ccdd64f04e053"
-  version "20170206201619"
+    :tag => "RELEASE.2017-04-03T18-35-01Z",
+    :revision => "c22c076eac03dc291323f49e07c4a25722ad5bb0"
+  version "20170403183501"
 
   bottle :unneeded
 
@@ -22,15 +22,15 @@ class MinioMc < Formula
       if build.head?
         system "go", "build", "-o", buildpath/"mc"
       else
-        minio_release = `git tag --points-at HEAD`.chomp
-        minio_version = minio_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)\-(\d+)\-(\d+)Z/, 'T\1:\2:\3Z')
-        minio_commit = `git rev-parse HEAD`.chomp
+        mc_release = `git tag --points-at HEAD`.chomp
+        mc_version = mc_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)\-(\d+)\-(\d+)Z/, 'T\1:\2:\3Z')
+        mc_commit = `git rev-parse HEAD`.chomp
         proj = "github.com/minio/mc"
 
         system "go", "build", "-o", buildpath/"mc", "-ldflags", <<-EOS.undent
-          -X #{proj}/cmd.Version=#{minio_version}
-          -X #{proj}/cmd.ReleaseTag=#{minio_release}
-          -X #{proj}/cmd.CommitID=#{minio_commit}
+          -X #{proj}/cmd.Version=#{mc_version}
+          -X #{proj}/cmd.ReleaseTag=#{mc_release}
+          -X #{proj}/cmd.CommitID=#{mc_commit}
         EOS
       end
     end
