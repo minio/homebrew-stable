@@ -1,43 +1,23 @@
 class Minio < Formula
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
-  url "https://github.com/minio/minio.git",
-    :tag => "RELEASE.2017-03-16T21-50-32Z",
-    :revision => "6e7d33df203d0c11d014b6625bfd18aada22328a"
+  url "https://github.com/minio/minio.git"
   version "20170316215032"
   revision 1
 
-  bottle :unneeded
+  if OS.mac?
+    url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
+    sha256 "df0481c941f475f33c266ab5e87260b263819a5526dc9e2c9a956afc189fa39b"
+  elsif OS.linux?
+    url "https://dl.minio.io/server/minio/release/linux-amd64/minio"
+    sha256 "c7952571e1640dbd3106dd05a977dbd17b82028c47401ed07b8c2278c2130967"
+  end
 
-  ## Minio depends on go1.7.x only because of the apparent incompatibilities with go1.8
-  ## for now, until the upstream https://github.com/minio/minio/tree/go1.8 is merged
-  ## and a new release is out we don't need to change the below line.
-  depends_on "go@1.7" => :build
+  bottle :unneeded
+  depends_on :arch => :x86_64
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    clipath = buildpath/"src/github.com/minio/minio"
-    clipath.install Dir["*"]
-
-    cd clipath do
-      if build.head?
-        system "go", "build", "-o", buildpath/"minio"
-      else
-        release = `git tag --points-at HEAD`.chomp
-        version = release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)\-(\d+)\-(\d+)Z/, 'T\1:\2:\3Z')
-        commit = `git rev-parse HEAD`.chomp
-        proj = "github.com/minio/minio"
-
-        system "go", "build", "-o", buildpath/"minio", "-ldflags", <<-EOS.undent
-            -X #{proj}/cmd.Version=#{version}
-            -X #{proj}/cmd.ReleaseTag=#{release}
-            -X #{proj}/cmd.CommitID=#{commit}
-            EOS
-      end
-    end
-
-    bin.install buildpath/"minio"
+    bin.install "minio"
   end
 
   def post_install
