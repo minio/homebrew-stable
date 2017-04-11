@@ -5,6 +5,7 @@ class Mc < Formula
     :tag => "RELEASE.2017-04-03T18-35-01Z",
     :revision => "c22c076eac03dc291323f49e07c4a25722ad5bb0"
   version "20170403183501"
+  revision 1
 
   bottle :unneeded
 
@@ -28,6 +29,8 @@ class Mc < Formula
         proj = "github.com/minio/mc"
 
         system "go", "build", "-o", buildpath/"mc", "-ldflags", <<-EOS.undent
+          -s
+          -w
           -X #{proj}/cmd.Version=#{mc_version}
           -X #{proj}/cmd.ReleaseTag=#{mc_release}
           -X #{proj}/cmd.CommitID=#{mc_commit}
