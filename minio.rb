@@ -2,15 +2,15 @@ class Minio < Formula
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git"
-  version "20170425012749"
+  version "20170429004027"
   revision 1
 
   if OS.mac?
     url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
-    sha256 "bf28b8d98c0b62249204efd1055497321733187d4c5ea6b31df6c2804ddc4c52"
+    sha256 "26d91a71e45cd15c9dcacf3db3389d8672c7eece3ded1fe589c1a4ea2a3bfabb"
   elsif OS.linux?
     url "https://dl.minio.io/server/minio/release/linux-amd64/minio"
-    sha256 "936ccc1e17f2d1bd466208d9be49ea078323417bb8e29c6ab8c3b0a8a0b78011"
+    sha256 "b2acd23601603b451e399ce445f484495b260e636710a67cb8d0f1781f43d585"
   end
 
   bottle :unneeded
