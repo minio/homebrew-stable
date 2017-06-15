@@ -1,44 +1,29 @@
 class Mc < Formula
   desc "ls, cp, mkdir, diff and rsync for filesystems and object storage"
   homepage "https://github.com/minio/mc"
-  url "https://github.com/minio/mc.git",
-    :tag => "RELEASE.2017-04-03T18-35-01Z",
-    :revision => "c22c076eac03dc291323f49e07c4a25722ad5bb0"
-  version "20170403183501"
+  url "https://github.com/minio/mc.git"
+  version "20170615T033843Z"
   revision 1
 
-  bottle :unneeded
+  if OS.mac?
+    url "https://dl.minio.io/client/mc/release/darwin-amd64/mc"
+    sha256 "a871c0ae797b2d11451da56f2097e2c78ead989903905763a408c0e64e5fcb63"
+  elsif OS.linux?
+    url "https://dl.minio.io/client/mc/release/linux-amd64/mc"
+    sha256 "969e0fdbb911d32f8c47601c912da5ce4a7f4c22ff118a4674b452c5f483c049"
+  end
 
-  depends_on "go@1.7" => :build
+  bottle :unneeded
+  depends_on :arch => :x86_64
 
   conflicts_with "midnight-commander", :because => "Both install a `mc` binary"
 
   def install
-    ENV["GOPATH"] = buildpath
+    bin.install "mc"
+  end
 
-    clipath = buildpath/"src/github.com/minio/mc"
-    clipath.install Dir["*"]
-
-    cd clipath do
-      if build.head?
-        system "go", "build", "-o", buildpath/"mc"
-      else
-        mc_release = `git tag --points-at HEAD`.chomp
-        mc_version = mc_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)\-(\d+)\-(\d+)Z/, 'T\1:\2:\3Z')
-        mc_commit = `git rev-parse HEAD`.chomp
-        proj = "github.com/minio/mc"
-
-        system "go", "build", "-o", buildpath/"mc", "-ldflags", <<-EOS.undent
-          -s
-          -w
-          -X #{proj}/cmd.Version=#{mc_version}
-          -X #{proj}/cmd.ReleaseTag=#{mc_release}
-          -X #{proj}/cmd.CommitID=#{mc_commit}
-        EOS
-      end
-    end
-
-    bin.install buildpath/"mc"
+  def post_install
+    (etc/"mc").mkpath
   end
 
   test do
