@@ -22,6 +22,7 @@ class Minio < Formula
 
   def post_install
     (var/"minio").mkpath
+    (var/"log/minio").mkpath
     (etc/"minio").mkpath
   end
 
@@ -41,7 +42,7 @@ class Minio < Formula
         <string>#{opt_bin}/minio</string>
         <string>server</string>
         <string>--config-dir=#{etc}/minio</string>
-        <string>--address :9000</string>
+        <string>--address=:9000</string>
         <string>#{var}/minio</string>
       </array>
       <key>RunAtLoad</key>
