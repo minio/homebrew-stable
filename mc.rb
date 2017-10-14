@@ -2,15 +2,15 @@ class Mc < Formula
   desc "ls, cp, mkdir, diff and rsync for filesystems and object storage"
   homepage "https://github.com/minio/mc"
   url "https://github.com/minio/mc.git"
-  version "20170615T033843Z"
+  version "20171014T005116Z"
   revision 1
 
   if OS.mac?
     url "https://dl.minio.io/client/mc/release/darwin-amd64/mc"
-    sha256 "a871c0ae797b2d11451da56f2097e2c78ead989903905763a408c0e64e5fcb63"
+    sha256 "968470b0b35c78cce1e1e7837190bbca3c8bf90199aea7d73aedaefe7ed1a1fe"
   elsif OS.linux?
     url "https://dl.minio.io/client/mc/release/linux-amd64/mc"
-    sha256 "969e0fdbb911d32f8c47601c912da5ce4a7f4c22ff118a4674b452c5f483c049"
+    sha256 "eb3edd18b5e8cf9b91d02aaf269b850a53800e2828d821a2cfdfc6ee1c14c379"
   end
 
   bottle :unneeded
