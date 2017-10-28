@@ -2,7 +2,7 @@ class Minio < Formula
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git"
-  version "20171027185902Z
+  version "20171027185902Z"
   revision 1
 
   if OS.mac?
