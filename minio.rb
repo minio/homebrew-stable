@@ -2,11 +2,11 @@ class Minio < Formula
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git"
-  version "20171027185902Z"
+  version "20171122195546Z"
   revision 1
 
   url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
-  sha256 "9d1e2603732d157304cc895bbc9210726e14ec92f283971a21939fa31d56af51"
+  sha256 "d19e4345fe87d5d254c6aefa079e9b425b7e4cc3def141b27dcdfe55e777f860"
 
   bottle :unneeded
   depends_on :arch => :x86_64
