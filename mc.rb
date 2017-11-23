@@ -2,7 +2,7 @@ class Mc < Formula
   desc "ls, cp, mkdir, diff and rsync for filesystems and object storage"
   homepage "https://github.com/minio/mc"
   url "https://github.com/minio/mc.git"
-  version "20171014T005116Z"
+  version "20171014005116Z"
   revision 1
 
   url "https://dl.minio.io/client/mc/release/darwin-amd64/mc"
