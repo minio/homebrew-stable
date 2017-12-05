@@ -1,12 +1,15 @@
 class Minio < Formula
+  # minio specific
+  git_tag = "RELEASE.2017-11-22T19-55-46Z"
+
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git"
-  version "20171122195546Z"
+  version git_tag.gsub(%r'[^\d]+', '') + 'Z'
   revision 1
 
   if OS.mac?
-    url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
+    url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{git_tag}"
     sha256 "d19e4345fe87d5d254c6aefa079e9b425b7e4cc3def141b27dcdfe55e777f860"
   elsif OS.linux?
     raise "No Linux support"
@@ -16,7 +19,7 @@ class Minio < Formula
   depends_on :arch => :x86_64
 
   def install
-    bin.install "minio"
+    bin.install "minio.#{git_tag}" => "minio"
   end
 
   def post_install
