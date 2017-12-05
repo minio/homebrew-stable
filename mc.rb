@@ -5,8 +5,12 @@ class Mc < Formula
   version "20171014005116Z"
   revision 1
 
-  url "https://dl.minio.io/client/mc/release/darwin-amd64/mc"
-  sha256 "968470b0b35c78cce1e1e7837190bbca3c8bf90199aea7d73aedaefe7ed1a1fe"
+  if OS.mac?
+    url "https://dl.minio.io/client/mc/release/darwin-amd64/mc"
+    sha256 "968470b0b35c78cce1e1e7837190bbca3c8bf90199aea7d73aedaefe7ed1a1fe"
+  elsif OS.linux?
+    raise "No Linux support"
+  end
 
   bottle :unneeded
   depends_on :arch => :x86_64
