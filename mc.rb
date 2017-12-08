@@ -21,7 +21,7 @@ class Mc < Formula
   conflicts_with "midnight-commander", :because => "Both install a `mc` binary"
 
   def install
-    bin.install "mc.#{git_tag}" => "mc"
+    bin.install Dir.glob("mc.*").first => "mc"
   end
 
   def post_install

@@ -19,7 +19,7 @@ class Minio < Formula
   depends_on :arch => :x86_64
 
   def install
-    bin.install "minio.#{git_tag}" => "minio"
+    bin.install Dir.glob("minio.*").first => "minio"
   end
 
   def post_install
