@@ -2,6 +2,8 @@
 
 Official [Homebrew](https://brew.sh/) packages for Minio.
 
+NOTE: [Linuxbrew](http://linuxbrew.sh/) is not officially supported.
+
 ## Install Minio
 
 ```sh

@@ -5,8 +5,12 @@ class Minio < Formula
   version "20171122195546Z"
   revision 1
 
-  url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
-  sha256 "d19e4345fe87d5d254c6aefa079e9b425b7e4cc3def141b27dcdfe55e777f860"
+  if OS.mac?
+    url "https://dl.minio.io/server/minio/release/darwin-amd64/minio"
+    sha256 "d19e4345fe87d5d254c6aefa079e9b425b7e4cc3def141b27dcdfe55e777f860"
+  elsif OS.linux?
+    raise "No Linux support"
+  end
 
   bottle :unneeded
   depends_on :arch => :x86_64
