@@ -10,7 +10,7 @@ class Mc < Formula
 
   if OS.mac?
     url "https://dl.minio.io/client/mc/release/darwin-amd64/mc.#{git_tag}"
-    sha256 "faa61548ef9732cf4f2d51d262aab58aceb2dd6e1391233f8ebd2dfc25979b20"
+    sha256 "a2ab0320605d886dfd85d907c2e919b8e002d8ec4a26e41e94b0f4de7199697f"
   elsif OS.linux?
     raise "No Linux support"
   end
