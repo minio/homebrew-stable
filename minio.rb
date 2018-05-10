@@ -1,6 +1,6 @@
 class Minio < Formula
   # minio specific
-  git_tag = "RELEASE.2018-05-04T23-13-12Z"
+  git_tag = "RELEASE.2018-05-10T00-00-42Z"
 
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
