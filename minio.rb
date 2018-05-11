@@ -10,7 +10,7 @@ class Minio < Formula
 
   if OS.mac?
     url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{git_tag}"
-    sha256 "3da973606e0eb670322f787aaccd2b0b293173419d4dc5dc96e691188aa9de1e"
+    sha256 "0f553f6b6c91bd9d98f7f1ce59a40df0e2ff99085a5ab048d5190ec44066086d"
   elsif OS.linux?
     raise "No Linux support"
   end
