@@ -1,6 +1,6 @@
 class Mc < Formula
   # mc specific
-  git_tag = "RELEASE.2018-07-31T02-28-53Z"
+  git_tag = "RELEASE.2018-08-02T17-39-44Z"
 
   desc "ls, cp, mkdir, diff and rsync for filesystems and object storage"
   homepage "https://github.com/minio/mc"
@@ -10,7 +10,7 @@ class Mc < Formula
 
   if OS.mac?
     url "https://dl.minio.io/client/mc/release/darwin-amd64/mc.#{git_tag}"
-    sha256 "2046774fac8d9cf4aa1ba582223bea5fa6a9dfe5c4382eb6170c171f4e973959"
+    sha256 "ac5a7496d5fe475b35c09f744a8c6fe3d0d1355aae3e999307f88ca3432d744a"
   elsif OS.linux?
     raise "No Linux support"
   end
