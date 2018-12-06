@@ -1,6 +1,6 @@
 class Minio < Formula
   # minio specific
-  git_tag = "RELEASE.2018-11-30T03-56-59Z"
+  git_tag = "RELEASE.2018-12-06T01-27-43Z"
 
   desc "Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
@@ -10,7 +10,7 @@ class Minio < Formula
 
   if OS.mac?
     url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{git_tag}"
-    sha256 "b9f69737cf42e679208a4b27a620d35554fbfc3cf526c00c60ae5ad253762d69"
+    sha256 "5b3deb3eca956a989c99ff3e7fd6a63818be68d483cc9205578f75f82ce1c00b"
   elsif OS.linux?
     raise "No Linux support"
   end
