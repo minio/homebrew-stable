@@ -1,16 +1,16 @@
-# Install Minio from brew
+# Install MinIO from brew
 
-Official [Homebrew](https://brew.sh/) packages for Minio.
+Official [Homebrew](https://brew.sh/) packages for MinIO.
 
-NOTE: [Linuxbrew](http://linuxbrew.sh/) is not officially supported.
+Official [Linuxbrew](http://linuxbrew.sh/) packages for MinIO.
 
-## Install Minio
+## Install MinIO
 
 ```sh
 brew install minio/stable/minio
 ```
 
-## Install Minio Client (mc)
+## Install MinIO Client (mc)
 
 ```sh
 brew install minio/stable/mc

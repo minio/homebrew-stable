@@ -2,7 +2,7 @@ class Minio < Formula
   # minio specific
   git_tag = "RELEASE.2019-06-04T01-15-58Z"
 
-  desc "Amazon S3 compatible object storage server"
+  desc "MinIO is an Amazon S3 compatible object storage server"
   homepage "https://github.com/minio/minio"
   url "https://github.com/minio/minio.git"
   version git_tag.gsub(%r'[^\d]+', '') + 'Z'
@@ -12,7 +12,8 @@ class Minio < Formula
     url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{git_tag}"
     sha256 "36ecd2477296b04263b9130119c566c7a4c40b57d4044c99745eda16846b5719"
   elsif OS.linux?
-    raise "No Linux support"
+    url "https://dl.minio.io/server/minio/release/linux-amd64/minio.#{git_tag}"
+    sha256 "c0c6d2fa8e53aa745d776cd7a7b31cec77c5521e8275bb8c01af96e306f19d15"
   end
 
   bottle :unneeded
@@ -20,48 +21,6 @@ class Minio < Formula
 
   def install
     bin.install Dir.glob("minio.*").first => "minio"
-  end
-
-  def post_install
-    (var/"minio").mkpath
-    (var/"log/minio").mkpath
-    (etc/"minio").mkpath
-  end
-
-  plist_options :manual => "minio server"
-
-  def plist; <<-EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-   <plist version="1.0">
-    <dict>
-      <key>KeepAlive</key>
-      <true/>
-      <key>Label</key>
-      <string>#{plist_name}</string>
-      <key>ProgramArguments</key>
-      <array>
-        <string>#{opt_bin}/minio</string>
-        <string>server</string>
-        <string>--config-dir=#{etc}/minio</string>
-        <string>--address=:9000</string>
-        <string>#{var}/minio</string>
-      </array>
-      <key>RunAtLoad</key>
-      <true/>
-      <key>KeepAlive</key>
-      <true/>
-      <key>WorkingDirectory</key>
-      <string>#{HOMEBREW_PREFIX}</string>
-      <key>StandardErrorPath</key>
-      <string>#{var}/log/minio/output.log</string>
-      <key>StandardOutPath</key>
-      <string>#{var}/log/minio/output.log</string>
-      <key>RunAtLoad</key>
-      <true/>
-    </dict>
-    </plist>
-    EOS
   end
 
   test do
