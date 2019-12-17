@@ -1,6 +1,6 @@
 class Mc < Formula
   # mc specific
-  git_tag = "RELEASE.2019-10-09T22-54-57Z"
+  git_tag = "RELEASE.2019-12-17T23-26-28Z"
 
   desc "MinIO Client for object storage and filesystems"
   homepage "https://github.com/minio/mc"
@@ -10,10 +10,10 @@ class Mc < Formula
 
   if OS.mac?
     url "https://dl.minio.io/client/mc/release/darwin-amd64/mc.#{git_tag}"
-    sha256 "35a518d80908cfe32c3a2258904dd845ca64b9b105a252e5cd5fb7269e261f15"
+    sha256 "1484889be44f62831645f866fbf772f7fc940504d5a56e955c2653bcec2a6558"
   elsif OS.linux?
     url "https://dl.minio.io/client/mc/release/linux-amd64/mc.#{git_tag}"
-    sha256 "e32d5ca6ec9ddcb5d4a28c1a00b78e76513883f2b0e8637435c5c0a42dc8697b"
+    sha256 "5b0db877a443fa128faefdd4bdac8e4e764a5e0254569cc596d31f00531858bb"
   end
 
   bottle :unneeded
