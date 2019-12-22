@@ -78,6 +78,6 @@ class Minio < Formula
     minio_io = IO.popen("#{bin}/minio --config-dir #{testpath} server #{testpath}/export", :err=>[:child, :out])
     sleep 1
     Process.kill("INT", minio_io.pid)
-    assert_match("getsockopt: connection refused", minio_io.read)
+    assert_match("connection refused", minio_io.read)
   end
 end
