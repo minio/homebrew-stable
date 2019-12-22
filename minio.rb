@@ -2,10 +2,10 @@ class Minio < Formula
   # minio specific
   git_tag = "RELEASE.2019-12-19T22-52-26Z"
 
-  desc "MinIO is an Amazon S3 compatible object storage server"
-  homepage "https://github.com/minio/minio"
-  url "https://github.com/minio/minio.git"
-  version git_tag.gsub(%r'[^\d]+', '') + 'Z'
+  desc "High Performance Object Storage compatible with Amazon S3 API"
+  homepage "https://min.io"
+  url "https://github.com/minio/minio"
+  version git_tag
   revision 1
 
   if OS.mac?
