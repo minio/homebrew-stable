@@ -24,6 +24,9 @@ class Minio < Formula
   end
 
   def post_install
+    (var/"minio").mkpath
+    (etc/"minio").mkpath
+    
     ohai "Download complete!"
     ohai "Useful links:"
     puts <<~EOS
@@ -40,6 +43,43 @@ class Minio < Formula
     EOS
     ohai "Get started:"
     puts `#{bin}/minio server -h`
+  end
+
+  plist_options :manual => "minio server"
+
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+        <dict>
+          <key>KeepAlive</key>
+          <true/>
+          <key>Label</key>
+          <string>#{plist_name}</string>
+          <key>ProgramArguments</key>
+          <array>
+            <string>#{opt_bin}/minio</string>
+            <string>server</string>
+            <string>--config-dir=#{etc}/minio</string>
+            <string>--address=:9000</string>
+            <string>#{var}/minio</string>
+          </array>
+          <key>RunAtLoad</key>
+          <true/>
+          <key>KeepAlive</key>
+          <true/>
+          <key>WorkingDirectory</key>
+          <string>#{HOMEBREW_PREFIX}</string>
+          <key>StandardErrorPath</key>
+          <string>#{var}/log/minio.log</string>
+          <key>StandardOutPath</key>
+          <string>#{var}/log/minio.log</string>
+          <key>RunAtLoad</key>
+          <true/>
+        </dict>
+      </plist>
+    EOS
   end
 
   test do
