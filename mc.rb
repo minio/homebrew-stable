@@ -13,7 +13,7 @@ class Mc < Formula
     sha256 "a2a2be58fe46d2c93ed31f4e79195ff36a5b1507482119a42d60e3794649a15e"
   elsif OS.linux?
     url "https://dl.minio.io/client/mc/release/linux-amd64/mc.#{version}"
-    sha256 "9a97435d55ed6a3be24aefe33b669d11f89513629e45604d94cfcb6280dc48f7"
+    sha256 "985c43f9bec8fdc4ef2ee44c63c9657e10c4cfeb5cb949179d6d693f7428c314"
   end
 
   bottle :unneeded
