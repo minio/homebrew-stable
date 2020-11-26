@@ -13,7 +13,7 @@ class Minio < Formula
     sha256 "a98b26081062c917c749fea7a125ce40fb73e3bc5f62c9a194169d18cd0696d5"
   elsif OS.linux?
     url "https://dl.minio.io/server/minio/release/linux-amd64/minio.#{version}"
-    sha256 "b4aca81cb6b8755d0ea617a879c9b2831c04ef0f4a490c281e091d872f5ed367"
+    sha256 "1c1b35ab63f7c8365994f22c98f34cbae6df2cb6923afc678f0bf6468beaecd9"
   end
 
   bottle :unneeded
