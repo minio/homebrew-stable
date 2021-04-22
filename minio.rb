@@ -1,6 +1,6 @@
 class Minio < Formula
   # minio specific
-  git_tag = "RELEASE.2021-04-18T19-26-29Z"
+  git_tag = "RELEASE.2021-04-22T15-44-28Z"
 
   desc "High Performance Object Storage compatible with Amazon S3 API"
   homepage "https://min.io"
@@ -10,10 +10,10 @@ class Minio < Formula
 
   if OS.mac?
     url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{version}"
-    sha256 "7927499a19211f17f27598054f02ec860f354edc788b253357f473c5860e2a52"
+    sha256 "6fa98901cb266786321868c72262ce65b197cf8d61d0ea6ffc5db1fb3c736f73"
   elsif OS.linux?
     url "https://dl.minio.io/server/minio/release/linux-amd64/minio.#{version}"
-    sha256 "2866b4ce1342604965056807daceea24d573101a8c76d8ba267567c4b85cbc5e"
+    sha256 "b8c62d3fbdb62fb4a1041399f9cd5352ac74cfa4ba2fada8ce5110480cff7921"
   end
 
   bottle :unneeded
