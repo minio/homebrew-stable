@@ -1,6 +1,6 @@
 class Mc < Formula
   # mc specific
-  git_tag = "RELEASE.2021-05-12T01-29-06Z"
+  git_tag = "RELEASE.2021-05-12T03-10-11Z"
 
   desc "MinIO Client for object storage and filesystems"
   homepage "https://min.io"
