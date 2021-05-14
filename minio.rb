@@ -9,10 +9,10 @@ class Minio < Formula
   revision 1
 
   if OS.mac?
-    url "https://dl.minio.io/server/minio/release/darwin-amd64/minio.#{version}"
+    url "https://dl.minio.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
     sha256 "a93085d92a503fe5537327f5b066a4d21aa1f9bc6106470cae0a646ed9e11c37"
   elsif OS.linux?
-    url "https://dl.minio.io/server/minio/release/linux-amd64/minio.#{version}"
+    url "https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.#{version}"
     sha256 "a435256a8ab67fe3ca2d56e7676ddba5479b7bdf7bdb544652aae393f5953f76"
   end
 
