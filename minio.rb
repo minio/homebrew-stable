@@ -16,7 +16,6 @@ class Minio < Formula
     sha256 "35bfc106cc32a3a11dffced6778c768585064ba512fa636204e7d838583903e2"
   end
 
-  bottle :unneeded
   depends_on :arch => :x86_64
 
   def install
