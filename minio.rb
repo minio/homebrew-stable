@@ -9,14 +9,17 @@ class Minio < Formula
   revision 1
 
   if OS.mac?
-    url "https://dl.minio.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
-    sha256 "e99b1a251e67c3aa5ca65767cd221e66dc7e2d9b622ef4da442d1723b6d7ec7b"
+    if Hardware::CPU.arm?
+      url "https://dl.minio.io/server/minio/release/darwin-arm64/minio.#{version}"
+      sha256 "7bd6af2fb86be6be482a8c71fb812da4223606dcea69d7d810787d4aacc1386e"
+    else
+      url "https://dl.minio.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
+      sha256 "e99b1a251e67c3aa5ca65767cd221e66dc7e2d9b622ef4da442d1723b6d7ec7b"
+    end
   elsif OS.linux?
     url "https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.#{version}"
     sha256 "35bfc106cc32a3a11dffced6778c768585064ba512fa636204e7d838583903e2"
   end
-
-  depends_on :arch => :x86_64
 
   def install
     bin.install Dir.glob("minio.*").first => "minio"
