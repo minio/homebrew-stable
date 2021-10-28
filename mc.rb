@@ -21,8 +21,6 @@ class Mc < Formula
     sha256 "aa58e16c74c38bc05ecf73bedee476eafb3a1c42ea1ac95635853b530a36be93"
   end
 
-  bottle :unneeded
-
   conflicts_with "midnight-commander", :because => "Both install `mc`"
 
   def install
