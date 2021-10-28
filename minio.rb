@@ -11,7 +11,7 @@ class Minio < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://dl.minio.io/server/minio/release/darwin-arm64/archive/minio.#{version}"
-      sha256 "7bd6af2fb86be6be482a8c71fb812da4223606dcea69d7d810787d4aacc1386e"
+      sha256 "3f796b63e4f91e0650bb1c9c233010a12e3c77bfa3970bc4f48ce62da0493a03"
     else
       url "https://dl.minio.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
       sha256 "b155a90099e7318ef2d0cf16a04eb1807a2aa22da60c8fef6d847d65d299b277"
