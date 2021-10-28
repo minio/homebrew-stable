@@ -10,7 +10,7 @@ class Mc < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://dl.minio.io/client/mc/release/darwin-arm64/mc.#{version}"
+      url "https://dl.minio.io/client/mc/release/darwin-arm64/archive/mc.#{version}"
       sha256 "3d25ab5da5959fcf2339203881faeaae2fe606f2e55a716b20e13a7628673589"
     else
       url "https://dl.minio.io/client/mc/release/darwin-amd64/archive/mc.#{version}"
