@@ -11,14 +11,19 @@ class Mc < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://dl.minio.io/client/mc/release/darwin-arm64/archive/mc.#{version}"
-      sha256 "3d25ab5da5959fcf2339203881faeaae2fe606f2e55a716b20e13a7628673589"
+      sha256 "6e0fab823fd15f2b9e250f0f1fd87257d262fd1df6feb192347e2b898bca5392"
     else
       url "https://dl.minio.io/client/mc/release/darwin-amd64/archive/mc.#{version}"
       sha256 "e97fde6e02954b7bad4187dce79d9908e2f18e0ceb92bb17ca165cb71aa60f08"
     end
   elsif OS.linux?
-    url "https://dl.minio.io/client/mc/release/linux-amd64/archive/mc.#{version}"
-    sha256 "9f5ad72fd93678f9f756c6da34a8d4d1e61f7356a96ee327c652ad765975d2b2"
+    if Hardware::CPU.arm?
+      url "https://dl.minio.io/client/mc/release/linux-arm64/archive/mc.#{version}"
+      sha256 "7fbac00d605345edcc1949d29735956660449df210e763656c01add182f5caaa"
+    else
+      url "https://dl.minio.io/client/mc/release/linux-amd64/archive/mc.#{version}"
+      sha256 "9f5ad72fd93678f9f756c6da34a8d4d1e61f7356a96ee327c652ad765975d2b2"
+    end
   end
 
   conflicts_with "midnight-commander", :because => "Both install `mc`"
