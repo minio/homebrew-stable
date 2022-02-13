@@ -1,6 +1,6 @@
 class Mc < Formula
   # mc specific
-  git_tag = "RELEASE.2022-02-07T09-25-34Z"
+  git_tag = "RELEASE.2022-02-13T23-26-13Z"
 
   desc "MinIO Client for object storage and filesystems"
   homepage "https://min.io"
@@ -11,18 +11,18 @@ class Mc < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://dl.minio.io/client/mc/release/darwin-arm64/archive/mc.#{version}"
-      sha256 "2b8a5353228eb1f16b5d82bde9a5bdc7079cdb7d628705a824faff291f4dd4d8"
+      sha256 "28cc9b78acdd6e42fcef20fac947c09d820b9384bf2f40c81e9860e2af7803da"
     else
       url "https://dl.minio.io/client/mc/release/darwin-amd64/archive/mc.#{version}"
-      sha256 "4a3ed665a4cb8fd22dfd498264a81681a6ea8a09487bb988a89f5439df957b29"
+      sha256 "066f2ace848ce64e4596c9db9427dee17785fcdf84a61b9942950bfb0da3084a"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://dl.minio.io/client/mc/release/linux-arm64/archive/mc.#{version}"
-      sha256 "2a50228ca99475da9fd84224077e3b4f5c96a8bfa397aa6ad585399085a3b03e"
+      sha256 "6da00499a1ef036804695ffefb180e0fb71cbe6a37c9bb72d5fac19d3bd9d158"
     else
       url "https://dl.minio.io/client/mc/release/linux-amd64/archive/mc.#{version}"
-      sha256 "bc70228002378834f8fded292cd7c8d4d88e587f7e35b3c6742cf6744e8c8569"
+      sha256 "aa2e4c1f6d116ad84561604880caafe6b517dd918b525a094c74c0f738440243"
     end
   end
 
