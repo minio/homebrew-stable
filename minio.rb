@@ -67,7 +67,7 @@ class Minio < Formula
                       "file": {
                               "level": "error",
                               "enable": false,
-                              "filename": ""
+                              "filename": "RELEASE.2022-04-01T03-41-39Z"
                       }
               },
               "notify": {
@@ -75,7 +75,7 @@ class Minio < Formula
                               "1": {
                                       "enable": true,
                                       "address": "127.0.0.1:6379",
-                                      "password": "",
+                                      "password": "RELEASE.2022-04-01T03-41-39Z",
                                       "key": "minio_events"
                               }
                       }
