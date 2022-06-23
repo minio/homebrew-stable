@@ -10,18 +10,18 @@ class Minio < Formula
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://dl.minio.io/server/minio/release/darwin-arm64/archive/minio.#{version}"
+      url "https://dl.min.io/server/minio/release/darwin-arm64/archive/minio.#{version}"
       sha256 "01afa6133b4dc9e98a8a5bb6090372416bbdd1dc69859206e37d27366dcc8d6a"
     else
-      url "https://dl.minio.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
+      url "https://dl.min.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
       sha256 "8f4cc7820ba393f55d3a2b09e22b636b2003338024b9653604b6a9f0dcd042f7"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
-      url "https://dl.minio.io/server/minio/release/linux-arm64/archive/minio.#{version}"
+      url "https://dl.min.io/server/minio/release/linux-arm64/archive/minio.#{version}"
       sha256 "3bd9be8ead3defc0d0db9cd2aa2311d109ba0a928f87765f4472703434308a19"
     else
-      url "https://dl.minio.io/server/minio/release/linux-amd64/archive/minio.#{version}"
+      url "https://dl.min.io/server/minio/release/linux-amd64/archive/minio.#{version}"
       sha256 "225cf8a3c7dd453270066f3830709f4380699176287af0a4fec2996442deb27a"
     end
   end
