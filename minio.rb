@@ -1,6 +1,6 @@
 class Minio < Formula
   # minio specific
-  git_tag = "RELEASE.2022-08-11T04-37-28Z"
+  git_tag = "RELEASE.2022-08-13T21-54-44Z"
 
   desc "High Performance Object Storage compatible with Amazon S3 API"
   homepage "https://min.io"
@@ -11,18 +11,18 @@ class Minio < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://dl.min.io/server/minio/release/darwin-arm64/archive/minio.#{version}"
-      sha256 "7ff3f1fdc827a40e07d06cf6a86362e017d58a64ad5c76ae42cdb1b07739c41e"
+      sha256 "d49620f79d73e103eccad1348425493fb518262164fec133fd1fcd7525591e79"
     else
       url "https://dl.min.io/server/minio/release/darwin-amd64/archive/minio.#{version}"
-      sha256 "bef1ba8aa5016deda5e6f6498c9bdf0ee7af977aeb9f493b37ff54a48710f40c"
+      sha256 "026a47817f6c66df399ec98c8bbe42369d693f0880ff5634a4c1beaa5b8274ef"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://dl.min.io/server/minio/release/linux-arm64/archive/minio.#{version}"
-      sha256 "6e4e88b857ec37e8aa855461d06ba1f06a3e223898bb62d6b53c0b8524f57081"
+      sha256 "124467363d4a57dbfb9f6cb198d470d19930be19552644d2f565950600b60cde"
     else
       url "https://dl.min.io/server/minio/release/linux-amd64/archive/minio.#{version}"
-      sha256 "3799f254b546608e769eb17dc8b8c75cbf85616e7340b1088ddd2305061ab40b"
+      sha256 "8f4056138673dea87356f0f82c50e22ca4cc431dfec7f48dd0e52849b387908f"
     end
   end
 
