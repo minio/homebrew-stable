@@ -14,5 +14,11 @@ brew install minio/stable/minio
 brew install minio/stable/mc
 ```
 
+## Install MinIO KES (kes)
+
+```sh
+brew install minio/stable/kes
+```
+
 ## Issues
 Please open issues at https://github.com/minio/minio
