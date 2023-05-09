@@ -1,4 +1,4 @@
-class Mc < Formula
+class Mcli < Formula
   # mc specific
   git_tag = "RELEASE.2023-05-04T18-10-16Z"
 
@@ -26,13 +26,11 @@ class Mc < Formula
     end
   end
 
-  conflicts_with "midnight-commander", :because => "Both install `mc`"
-
   def install
-    bin.install Dir.glob("mc.*").first => "mc"
+    bin.install Dir.glob("mc.*").first => "mcli"
   end
 
   test do
-    system bin/"mc", "mb", testpath/"test"
+    system bin/"mcli", "mb", testpath/"test"
   end
 end
