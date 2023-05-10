@@ -10,18 +10,18 @@ class Kes < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/minio/kes/releases/download/#{version}/kes-darwin-arm64"
-      sha256 "bac6e6e0d4a11bb9d32c9da944682429a7684fd7c8153fdc0ff90d91c6f30dd7"
+      sha256 "14537309135118d69b5af24628f68eb1a9e1b83d7272d785103ddadd860a5a02"
     else
       url "https://github.com/minio/kes/releases/download/#{version}/kes-darwin-amd64"
-      sha256 "f84ca3f50732bab84e02b5b55c97e83d36575edc0ce7ccfa6c4df566107acbb5"
+      sha256 "8557d1e675eebd0c0d55ad09be6eb613a70237b1c79e4d4f1c50bdf2a7332ea2"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/minio/kes/releases/download/#{version}/kes-linux-arm64"
-      sha256 "2dabcdb9bc401c9906b527f11381030930734688d496e7b2e56fe6afc24bef63"
+      sha256 "e3b96a1f7bc4527ba951e2aa2c04b7248e0c67783976d5604960a0087d02e5f7"
     else
       url "https://github.com/minio/kes/releases/download/#{version}/kes-linux-amd64"
-      sha256 "13476a4a8d6319d834faf386b1596146605586113ca177bcc6333a6c2288337c"
+      sha256 "9cc720f5b8348759a3bd04e7c1b23bd2bcc39c529358715a41c80bac52a8dde4"
     end
   end
 
