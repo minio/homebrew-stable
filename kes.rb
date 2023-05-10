@@ -1,5 +1,5 @@
 class Kes < Formula
-  git_tag = "2023-02-15T14-54-37Z"  # KES specific
+  git_tag = "2023-05-02T22-48-10Z"  # KES specific
   
   desc "A cloud-native distributed KMS designed to build zero-trust infrastructures at scale"
   homepage "https://min.io"
