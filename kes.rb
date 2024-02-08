@@ -1,5 +1,5 @@
 class Kes < Formula
-  git_tag = "2023-05-02T22-48-10Z"  # KES specific
+  git_tag = "2024-01-11T13-09-29Z"  # KES specific
   
   desc "A cloud-native distributed KMS designed to build zero-trust infrastructures at scale"
   homepage "https://min.io"
@@ -9,14 +9,14 @@ class Kes < Formula
 
   if OS.mac?
       url "https://github.com/minio/kes/releases/download/#{version}/kes-darwin-arm64"
-      sha256 "810a5faefd2d0427197e3d7e654291dd3ff25b54d1507988e80f7b6a26d3adfb"
+      sha256 "1b7b17fb324895195c6332e000117cbab68306b609a2129ea9425561e664965a"
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/minio/kes/releases/download/#{version}/kes-linux-arm64"
-      sha256 "02bb57e9ce3f1bdb0e6344addca70601f368bda238ed7ce5850015192762dda2"
+      sha256 "6c917c8dfe70707a905dd2630263ba7d2b08144c7cfd4af9076bbea9c8f8dc2d"
     else
       url "https://github.com/minio/kes/releases/download/#{version}/kes-linux-amd64"
-      sha256 "599660e8548d3c5ea7366bbf860f24dffa0165dc5cf47946118ecd1b1ee8247d"
+      sha256 "4698b6609125b79b452da42744afb68dafdfd1819a8e1c8c7f26e68d7d2cb427"
     end
   end
 
